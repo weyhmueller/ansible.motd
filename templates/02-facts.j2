@@ -23,6 +23,9 @@ echo "Project:              {{ ansible_project }}"
 {% if ansible_vendor_contract is defined %}
 echo "Vendor Contract:      {{ ansible_vendor_contract }}"
 {% endif %}
+{% if ansible_server_env is defined %}
+echo "Environment:          {{ ansible_server_env }}"
+{% endif %}
 {% if ansible_server_role is defined %}
 echo "Role:                 {{ ansible_server_role }}"
 {% endif %}
