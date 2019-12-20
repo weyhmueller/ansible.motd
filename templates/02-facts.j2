@@ -20,8 +20,10 @@ echo "Customer:             {{ ansible_customer }}"
 {% if ansible_project is defined %}
 echo "Project:              {{ ansible_project }}"
 {% endif %}
+{% if ansible_vendor_contract is defined %}
+echo "Vendor Contract:      {{ ansible_vendor_contract }}"
+{% endif %}
 {% if ansible_server_role is defined %}
 echo "Role:                 {{ ansible_server_role }}"
 {% endif %}
-echo "Last ansible run:     {{ ansible_date_time.iso8601 }}"
 echo
