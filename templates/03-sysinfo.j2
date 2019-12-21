@@ -26,7 +26,7 @@ echo
 echo "Interfaces:"
   {%   for int in ansible_interfaces %}
   {%     if "veth" not in int %}
-  {%     if "br" not in int %}
+  {%     if "br-" not in int %}
 echo " Interface: {{ int }}"
   {%         if hostvars[inventory_hostname]['ansible_'+int] is defined %}
   {%           if hostvars[inventory_hostname]['ansible_'+int]['ipv4'] is defined %}
