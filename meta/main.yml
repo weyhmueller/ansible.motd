@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   author: weyhmueller
+  role_name: weyhmueller_motd
   license: MIT
   description: Configures dynamic motd file on Ubuntu and Centos.
   min_ansible_version: 2.9
