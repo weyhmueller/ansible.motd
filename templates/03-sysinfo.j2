@@ -22,9 +22,9 @@ echo "$UPTIME - since $UPSINCE"
 echo
 echo "Total: $TOTALMEM / Free: $MEMFREEREAL / Swap: $SWAPUSAGE"
 echo
-  {% if ansible_facts["ansible_interfaces"] is defined %}
+  {% if ansible_facts["interfaces"] is defined %}
 echo "Interfaces:"
-  {%   for int in ansible_facts["ansible_interfaces"] %}
+  {%   for int in ansible_facts["interfaces"] %}
   {%     if "veth" not in int %}
   {%     if "br-" not in int %}
 echo " Interface: {{ int }}"
