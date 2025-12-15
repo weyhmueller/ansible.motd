@@ -3,7 +3,7 @@ echo "FQDN:                 {{ ansible_facts["fqdn"] }}"
 echo "Distro:               {{ ansible_facts["distribution"] }} {{ ansible_facts["distribution_version"] }} {{ ansible_facts["distribution_release"] }}"
 echo "Virtual:              {{ 'YES' if ansible_facts["virtualization_role"] == 'guest' else 'NO' }}"
 echo "Virtualization Type:  {{ ansible_facts["virtualization_type"] }}"
-echo "Timezone:             {{ ansible_facts["date_time.tz"] }}({{ ansible_facts["date_time.tz_offset"] }})"
+echo "Timezone:             {{ ansible_facts["date_time"]["tz"] }}({{ ansible_facts["date_time"]["tz_offset"] }})"
 echo
 {% if ansible_server_location is defined %}
 echo "Location:             {{ ansible_server_location }}"
