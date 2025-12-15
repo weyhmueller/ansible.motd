@@ -1,24 +1,24 @@
 #!/bin/sh
-echo "FQDN:                 {{ ansible_fqdn }}"
-echo "Distro:               {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
-echo "Virtual:              {{ 'YES' if ansible_virtualization_role == 'guest' else 'NO' }}"
-echo "Virtualization Type:  {{ ansible_virtualization_type }}"
-echo "Timezone:             {{ ansible_date_time.tz }}({{ ansible_date_time.tz_offset }})"
+echo "FQDN:                 {{ ansible_facts["ansible_fqdn"] }}"
+echo "Distro:               {{ ansible_facts["ansible_distribution"] }} {{ ansible_facts["ansible_distribution_version"] }} {{ ansible_facts["ansible_distribution_release"] }}"
+echo "Virtual:              {{ 'YES' if ansible_facts["ansible_virtualization_role"] == 'guest' else 'NO' }}"
+echo "Virtualization Type:  {{ ansible_facts["ansible_virtualization_type"] }}"
+echo "Timezone:             {{ ansible_facts["ansible_date_time.tz"] }}({{ ansible_facts["ansible_date_time.tz_offset"] }})"
 echo
-{% if ansible_location is defined %}
-echo "Location:             {{ ansible_location }}"
+{% if ansible_server_location is defined %}
+echo "Location:             {{ ansible_server_location }}"
 {% endif %}
-{% if ansible_region is defined %}
-echo "Region:               {{ ansible_region }}"
+{% if ansible_server_region is defined %}
+echo "Region:               {{ ansible_server_region }}"
 {% endif %}
-{% if ansible_zone is defined %}
-echo "Zone:                 {{ ansible_zone }}"
+{% if ansible_server_zone is defined %}
+echo "Zone:                 {{ ansible_server_zone }}"
 {% endif %}
-{% if ansible_customer is defined %}
-echo "Customer:             {{ ansible_customer }}"
+{% if ansible_server_customer is defined %}
+echo "Customer:             {{ ansible_server_customer }}"
 {% endif %}
-{% if ansible_project is defined %}
-echo "Project:              {{ ansible_project }}"
+{% if ansible_server_project is defined %}
+echo "Project:              {{ ansible_server_project }}"
 {% endif %}
 {% if ansible_vendor_contract is defined %}
 echo "Vendor Contract:      {{ ansible_vendor_contract }}"
